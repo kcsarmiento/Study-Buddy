@@ -1,3 +1,75 @@
 <resources>
     <string name="app_name">Study Buddy</string>
+    
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="task_stats">Task Stats</string>
+    
+    <!-- Tasks -->
+    <string name="add_task">Add Task</string>
+    <string name="edit_task">Edit Task</string>
+    <string name="task_title">Task Title</string>
+    <string name="task_description">Description</string>
+    <string name="due_date">Due Date</string>
+    <string name="due_time">Due Time</string>
+    <string name="save_task">Save Task</string>
+    <string name="delete_task">Delete</string>
+    <string name="mark_complete">Complete</string>
+    <string name="mark_incomplete">Incomplete</string>
+    <string name="no_tasks">No tasks yet. Tap + to add one!</string>
+    
+    <!-- Notes -->
+    <string name="notes_title">Notes</string>
+    <string name="add_note">Add Note</string>
+    <string name="note_title">Note Title</string>
+    <string name="note_content">Note Content</string>
+    <string name="save_note">Save Note</string>
+    <string name="delete_note">Delete</string>
+    <string name="no_notes">No notes yet. Tap + to add one!</string>
+    
+    <!-- Calendar -->
+    <string name="calendar_title">Calendar</string>
+    <string name="add_event">Add Event</string>
+    <string name="event_title">Event Title</string>
+    <string name="event_description">Description</string>
+    <string name="event_date">Event Date</string>
+    <string name="event_time">Event Time</string>
+    <string name="reminder_time">Reminder Time</string>
+    <string name="save_event">Save Event</string>
+    <string name="no_events">No events for this date</string>
+    
+    <!-- Analytics -->
+    <string name="analytics_title">Analytics</string>
+    <string name="total_tasks">Total Tasks</string>
+    <string name="completed_tasks">Completed</string>
+    <string name="pending_tasks">Pending</string>
+    <string name="tasks_this_week">Tasks This Week</string>
+    <string name="tasks_today">Tasks Today</string>
+    <string name="current_streak">Current Streak</string>
+    <string name="longest_streak">Longest Streak</string>
+    <string name="days">days</string>
+    
+    <!-- Navigation -->
+    <string name="nav_analytics">Analytics</string>
+    <string name="nav_timer">Timer</string>
+    <string name="nav_tasks">Tasks</string>
+    <string name="nav_notes">Notes</string>
+    <string name="nav_calendar">Calendar</string>
+    
+    <!-- Messages -->
+    <string name="task_added">Task added successfully!</string>
+    <string name="task_updated">Task updated successfully!</string>
+    <string name="task_deleted">Task deleted</string>
+    <string name="note_added">Note saved!</string>
+    <string name="note_deleted">Note deleted</string>
+    <string name="event_added">Event added successfully!</string>
+    <string name="event_deleted">Event deleted</string>
+    <string name="reminder_set">Reminder set</string>
+    <string name="error_title_required">Title is required</string>
+    <string name="error_auth_failed">Authentication failed</string>
+    
+    <!-- Notification -->
+    <string name="notification_channel_name">Study Buddy Reminders</string>
+    <string name="notification_channel_description">Reminders for tasks and events</string>
+    <string name="reminder_notification_title">Study Buddy Reminder</string>
 </resources>

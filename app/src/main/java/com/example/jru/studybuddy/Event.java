@@ -3,25 +3,23 @@ package com.example.jru.studybuddy;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Task {
+public class Event {
     private String id;
     private String title;
     private String description;
-    private long dueDate;
-    private boolean completed;
-    private long completedAt;
+    private long eventDate;
+    private long reminderAt;
     private long createdAt;
 
-    public Task() {
+    public Event() {
     }
 
-    public Task(String id, String title, String description, long dueDate, boolean completed, long completedAt, long createdAt) {
+    public Event(String id, String title, String description, long eventDate, long reminderAt, long createdAt) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.dueDate = dueDate;
-        this.completed = completed;
-        this.completedAt = completedAt;
+        this.eventDate = eventDate;
+        this.reminderAt = reminderAt;
         this.createdAt = createdAt;
     }
 
@@ -49,28 +47,20 @@ public class Task {
         this.description = description;
     }
 
-    public long getDueDate() {
-        return dueDate;
+    public long getEventDate() {
+        return eventDate;
     }
 
-    public void setDueDate(long dueDate) {
-        this.dueDate = dueDate;
+    public void setEventDate(long eventDate) {
+        this.eventDate = eventDate;
     }
 
-    public boolean isCompleted() {
-        return completed;
+    public long getReminderAt() {
+        return reminderAt;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
-    public long getCompletedAt() {
-        return completedAt;
-    }
-
-    public void setCompletedAt(long completedAt) {
-        this.completedAt = completedAt;
+    public void setReminderAt(long reminderAt) {
+        this.reminderAt = reminderAt;
     }
 
     public long getCreatedAt() {
@@ -85,9 +75,8 @@ public class Task {
         Map<String, Object> map = new HashMap<>();
         map.put("title", title);
         map.put("description", description);
-        map.put("dueDate", dueDate);
-        map.put("completed", completed);
-        map.put("completedAt", completedAt);
+        map.put("eventDate", eventDate);
+        map.put("reminderAt", reminderAt);
         map.put("createdAt", createdAt);
         return map;
     }

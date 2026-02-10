@@ -7,23 +7,28 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
 public class DashboardActivity extends AppCompatActivity {
 
     private TextView taskCount, taskDate;
+    private FirebaseRepository repository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        // Initialize Views
+        repository = new FirebaseRepository();
+
         taskCount = findViewById(R.id.taskCount);
         taskDate = findViewById(R.id.taskDate);
 
-        // Update Task Stats
         updateTaskStats();
 
-        // Navigation to Task Manager
         ImageView navAddTask = findViewById(R.id.navAddTask);
         navAddTask.setOnClickListener(v -> {
             Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
@@ -31,9 +36,39 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateTaskStats();
+    }
+
     private void updateTaskStats() {
-        // Mock Data for Now
-        taskCount.setText("20+");  // Replace with real data later
-        taskDate.setText("Jan 25, 2025");
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault());
+        taskDate.setText(sdf.format(new Date()));
+
+        repository.getTasks(new FirebaseRepository.DataCallback<Task>() {
+            @Override
+            public void onSuccess(List<Task> tasks) {
+                int total = tasks.size();
+                int completed = 0;
+                
+                for (Task task : tasks) {
+                    if (task.isCompleted()) {
+                        completed++;
+                    }
+                }
+                
+                if (total > 20) {
+                    taskCount.setText("20+");
+                } else {
+                    taskCount.setText(String.valueOf(total));
+                }
+            }
+
+            @Override
+            public void onFailure(String error) {
+                taskCount.setText("0");
+            }
+        });
     }
 }

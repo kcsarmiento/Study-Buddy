@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jru.studybuddy">
 
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyBuddy">
 
-        <!-- DashboardActivity as Launcher -->
-        <activity android:name=".DashboardActivity"
+        <activity 
+            android:name=".DashboardActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +22,34 @@
             </intent-filter>
         </activity>
 
-        <!-- Task Manager Activity -->
-        <activity android:name=".MainActivity" />
+        <activity 
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity 
+            android:name=".AddTaskActivity"
+            android:exported="false" />
+
+        <activity 
+            android:name=".NotesActivity"
+            android:exported="false" />
+
+        <activity 
+            android:name=".CalendarActivity"
+            android:exported="false" />
+
+        <activity 
+            android:name=".AddEventActivity"
+            android:exported="false" />
+
+        <activity 
+            android:name=".AnalyticsActivity"
+            android:exported="false" />
+
+        <receiver 
+            android:name=".ReminderReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
     </application>
 </manifest>
